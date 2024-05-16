@@ -14,24 +14,23 @@ $(document).ready(function () {
     })(jQuery);
   
     // input text for typing animation
-    $("#holder").writeText("WEB DESIGNER + FRONT-END DEVELOPER");
+    $("#holder").writeText("Full Stack Developer");
   
     // initialize wow.js
     new WOW().init();
   
-    // Push the body and the nav over by 285px over
     var main = function () {
       $(".fa-bars").click(function () {
         $(".nav-screen").animate(
           {
             right: "0px"
           },
-          200
+          300
         );
   
         $("body").animate(
           {
-            right: "285px"
+            right: "300px"
           },
           200
         );
@@ -41,7 +40,7 @@ $(document).ready(function () {
       $(".fa-times").click(function () {
         $(".nav-screen").animate(
           {
-            right: "-285px"
+            right: "-300px"
           },
           200
         );
@@ -57,7 +56,7 @@ $(document).ready(function () {
       $(".nav-links a").click(function () {
         $(".nav-screen").animate(
           {
-            right: "-285px"
+            right: "-300px"
           },
           500
         );
@@ -79,8 +78,8 @@ $(document).ready(function () {
       scrollBar: true,
       responsiveWidth: 400,
       navigation: true,
-      navigationTooltips: ["home", "about", "portfolio", "contact", "connect"],
-      anchors: ["home", "about", "portfolio", "contact", "connect"],
+      navigationTooltips: ["home", "about", "portfolio", "contact", "connect", "projects"],
+      anchors: ["home", "about", "portfolio", "contact", "connect", , "projects"],
       menu: "#myMenu",
       fitToSection: false,
   
@@ -96,7 +95,7 @@ $(document).ready(function () {
           $(".header-links a").each(function () {
             $(this).css("color", "white");
           });
-          $(".header-links").css("background-color", "transparent");
+          $(".header-links").css("background-color", "grey");
         } else if (index != 1) {
           $(".header-links a").each(function () {
             $(this).css("color", "black");
@@ -121,12 +120,10 @@ $(document).ready(function () {
       }
     });
   
-    // move section down one
     $(document).on("click", "#moveDown", function () {
       $.fn.fullpage.moveSectionDown();
     });
   
-    // fullpage.js link navigation
     $(document).on("click", "#skills", function () {
       $.fn.fullpage.moveTo(2);
     });
@@ -187,7 +184,6 @@ $(document).ready(function () {
           data: formData
         })
           .done(function (response) {
-            // Make sure that the formMessages div has the 'success' class.
             $(formMessages).removeClass("error");
             $(formMessages).addClass("success");
   
@@ -200,7 +196,6 @@ $(document).ready(function () {
             $("#message").val("");
           })
           .fail(function (data) {
-            // Make sure that the formMessages div has the 'error' class.
             $(formMessages).removeClass("success");
             $(formMessages).addClass("error");
   
